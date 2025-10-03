@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 Portfolio Soumia Essabiry - Développeuse Full Stack
 
 Un portfolio moderne et professionnel créé avec **React.js** et **Tailwind CSS**, présentant les compétences et projets de Soumia Essabiry.
@@ -188,3 +189,6 @@ N'oubliez pas de :
 - Déployer sur votre plateforme préférée
 
 **Bonne chance dans votre recherche d'opportunités ! 🚀**
+=======
+# portfolioSoumia
+>>>>>>> 58e56abb336f5068c5d42dada45cc1daf35a3592

@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/portfolioSoumia/static/css/main.7aa14ea5.css",
+    "main.js": "/portfolioSoumia/static/js/main.ac8f0170.js",
+    "index.html": "/portfolioSoumia/index.html",
+    "main.7aa14ea5.css.map": "/portfolioSoumia/static/css/main.7aa14ea5.css.map",
+    "main.ac8f0170.js.map": "/portfolioSoumia/static/js/main.ac8f0170.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7aa14ea5.css",
+    "static/js/main.ac8f0170.js"
+  ]
+}

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaccinMaroc - Partie 3: Rapports, Paramètres et Fonctionnalités Mobiles</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Cairo:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+        
+        .section h2 {
+            color: #2563EB;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2563EB;
+            font-weight: 600;
+        }
+        
+        .section h3 {
+            color: #1E40AF;
+            font-size: 1.4em;
+            margin: 20px 0 15px 0;
+            font-weight: 500;
+        }
+        
+        .interface-mockup {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+            overflow-x: auto;
+            white-space: pre;
+        }
+        
+        .highlight-box {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .highlight-box h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .color-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 6px;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .color-item.blue { background: #2563EB; }
+        .color-item.green { background: #10B981; }
+        .color-item.orange { background: #F59E0B; }
+        .color-item.red { background: #EF4444; }
+        .color-item.gray { background: #6B7280; }
+        .color-item.white { background: #FFFFFF; color: #333; border: 1px solid #e2e8f0; }
+        
+        .checklist {
+            background: #f0f9ff;
+            border-left: 4px solid #2563EB;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .checklist h4 {
+            color: #1E40AF;
+            margin-bottom: 15px;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .checklist li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .checklist li:before {
+            content: "☐ ";
+            color: #2563EB;
+            font-weight: bold;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .stat-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #2563EB;
+        }
+        
+        .stat-label {
+            color: #6B7280;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; }
+            .section { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Section 7: Rapports et Statistiques -->
+        <div class="section">
+            <h2>📊 Rapports et Statistiques</h2>
+            
+            <h3>Tableau de Bord Administratif</h3>
+            <div class="interface-mockup">┌─────────────────────────────────────────────────────────────┐
+│ 📊 TABLEAU DE BORD ADMINISTRATIF                           │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ 🏥 HÔPITAL IBN SINA - CASABLANCA                          │
+│ 📅 PÉRIODE : 01/07/2024 - 31/07/2024                     │
+│                                                             │
+│ 📈 COUVERTURE VACCINALE GLOBALE                            │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ 🎯 Objectif : 95%                                       │
+│ │ ✅ Actuel : 92.3% (+2.1% ce mois)                      │
+│ │ 📊 Progression : ████████████████████░░ 92.3%           │
+│ └─────────────────────────────────────────────────────────┘ │
+│                                                             │
+│ 👶 STATISTIQUES PAR ÂGE                                    │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ 0-6 mois    : 156 enfants (94.2% vaccinés)             │
+│ │ 6-12 mois   : 142 enfants (91.5% vaccinés)             │
+│ │ 1-2 ans     : 128 enfants (89.8% vaccinés)             │
+│ │ 2-5 ans     : 98 enfants (95.9% vaccinés)              │
+│ └─────────────────────────────────────────────────────────┘ │
+│                                                             │
+│ 💉 VACCINS LES PLUS ADMINISTRÉS                            │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ 1. DTCaP : 423 doses (98.1%)                           │
+│ │ 2. Polio : 421 doses (97.7%)                           │
+│ │ 3. ROR : 156 doses (89.2%)                             │
+│ │ 4. Pneumocoque : 398 doses (96.8%)                     │
+│ └─────────────────────────────────────────────────────────┘ │
+│                                                             │
+│ 🚨 ALERTES ET ACTIONS REQUISES                             │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ ⚠️ 23 enfants en retard de vaccination                  │
+│ │ ⚠️ Stock vaccin ROR faible (45 doses)                  │
+│ │ ⚠️ 3 infirmiers en formation cette semaine             │
+│ └─────────────────────────────────────────────────────────┘ │
+│                                                             │
+│ [📊 EXPORTER RAPPORT] [📧 ENVOYER MINISTÈRE] [🖨️ IMPRIMER] │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘</div>
+        </div>
+
+        <!-- Section 8: Paramètres et Configuration -->
+        <div class="section">
+            <h2>⚙️ Paramètres et Configuration</h2>
+            
+            <h3>Paramètres Utilisateur</h3>
+            <div class="interface-mockup">┌─────────────────────────────────────────────────────────────┐
+│ ⚙️ PARAMÈTRES PERSONNELS                                    │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ 👤 PROFIL INFIRMIER                                        │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ Prénom : [Aicha                    ]                    │ │
+│ │ Nom : [Bennani                    ]                     │ │
+│ │ Email : [aicha.bennani@hopital.ma]                     │ │
+│ │ Téléphone : [06 12 34 56 78]                           │ │
+│ │ Spécialité : [Pédiatrie]                                │ │
+│ └─────────────────────────────────────────────────────────┘ │
+│                                                             │
+│ 🔔 NOTIFICATIONS                                            │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ [✅] Rappels vaccinations                               │ │
+│ │ [✅] Alertes stock faible                               │ │
+│ │ [✅] Notifications nouvelles tâches                     │ │
+│ │ [❌] Rapports quotidiens                                 │ │
+│ └─────────────────────────────────────────────────────────┘ │
+│                                                             │
+│ 🌐 LANGUE ET RÉGION                                         │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ Langue principale : [العربية ▼]                        │ │
+│ │ Langue secondaire : [Français ▼]                        │ │
+│ │ Format date : [JJ/MM/AAAA]                              │ │
+│ │ Fuseau horaire : [Casablanca UTC+1]                     │ │
+│ └─────────────────────────────────────────────────────────┘ │
+│                                                             │
+│ 🔒 SÉCURITÉ                                                │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ [🔑 Changer mot de passe]                               │ │
+│ │ [📱 Authentification 2FA]                               │ │
+│ │ [🔐 Verrouillage automatique]                           │ │
+│ └─────────────────────────────────────────────────────────┘ │
+│                                                             │
+│ [💾 SAUVEGARDER] [❌ ANNULER]                              │ │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘</div>
+        </div>
+
+        <!-- Section 9: Fonctionnalités Mobiles -->
+        <div class="section">
+            <h2>📱 Fonctionnalités Mobiles</h2>
+            
+            <h3>Mode Hors-Ligne (Zones Rurales)</h3>
+            <div class="interface-mockup">┌─────────────────────────────────────────────────────────────┐
+│ 📱 MODE HORS-LIGNE ACTIVÉ                                  │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│ ⚠️ Connexion internet limitée détectée                    │
+│                                                             │
+│ 💾 DONNÉES DISPONIBLES HORS-LIGNE                          │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ ✅ Fiches patients (dernière sync : 2h)                │ │
+│ │ ✅ Calendrier vaccinal                                  │ │
+│ ✅ Historique des vaccinations                            │ │
+│ ✅ Formulaire de saisie                                   │ │
+│ └─────────────────────────────────────────────────────────┘ │
+│                                                             │
+│ 🔄 SYNCHRONISATION AUTOMATIQUE                             │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ 📡 Tentative de connexion toutes les 5 minutes         │ │
+│ │ 💾 Sauvegarde locale des nouvelles données              │ │
+│ │ 📤 Envoi automatique quand connexion rétablie          │ │
+│ └─────────────────────────────────────────────────────────┘ │
+│                                                             │
+│ 📊 STATUT DE SYNCHRONISATION                               │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ 🔴 15 nouvelles vaccinations en attente d'envoi        │ │
+│ │ 🟡 3 modifications de fiches en attente                │ │
+│ │ 🟢 Base de données locale à jour                        │ │
+│ └─────────────────────────────────────────────────────────┘ │
+│                                                             │
+│ [🔄 SYNCHRONISER MAINTENANT] [📱 CONTINUER HORS-LIGNE]    │ │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘</div>
+        </div>
+
+        <!-- Section 10: Guide de Design -->
+        <div class="section">
+            <h2>🎨 Guide de Design</h2>
+            
+            <h3>Palette de Couleurs</h3>
+            <div class="color-palette">
+                <div class="color-item blue">🔵 Bleu principal : #2563EB<br>Confiance, Professionnalisme</div>
+                <div class="color-item green">🟢 Vert succès : #10B981<br>Validation, Sécurité</div>
+                <div class="color-item orange">🟠 Orange alerte : #F59E0B<br>Attention, Rappels</div>
+                <div class="color-item red">🔴 Rouge danger : #EF4444<br>Erreurs, Urgences</div>
+                <div class="color-item gray">⚫ Gris neutre : #6B7280<br>Texte, Bordures</div>
+                <div class="color-item white">⚪ Blanc : #FFFFFF<br>Arrière-plans, Cartes</div>
+            </div>
+
+            <h3>Typographie</h3>
+            <div class="highlight-box">
+                <h4>Hiérarchie Typographique</h4>
+                <ul>
+                    <li><strong>H1 :</strong> 32px - Titres principaux (Roboto Bold)</li>
+                    <li><strong>H2 :</strong> 24px - Sections (Roboto SemiBold)</li>
+                    <li><strong>H3 :</strong> 20px - Sous-sections (Roboto Medium)</li>
+                    <li><strong>Body :</strong> 16px - Texte principal (Roboto Regular)</li>
+                    <li><strong>Caption :</strong> 14px - Légendes, notes (Roboto Light)</li>
+                    <li><strong>Small :</strong> 12px - Informations secondaires (Roboto Light)</li>
+                </ul>
+            </div>
+
+            <h3>Polices Multilingues</h3>
+            <ul>
+                <li><strong>Arabe :</strong> Cairo (optimisée RTL)</li>
+                <li><strong>Français :</strong> Roboto (optimisée LTR)</li>
+                <li><strong>Fallback :</strong> System fonts</li>
+            </ul>
+        </div>
+
+        <!-- Section 11: Checklist de Développement -->
+        <div class="section">
+            <h2>📋 Checklist de Développement</h2>
+            
+            <div class="checklist">
+                <h4>Phase 1 - Interface de Base</h4>
+                <ul>
+                    <li>Page de connexion responsive</li>
+                    <li>Tableau de bord principal</li>
+                    <li>Navigation mobile-first</li>
+                    <li>Système d'authentification</li>
+                    <li>Gestion des rôles</li>
+                </ul>
+            </div>
+
+            <div class="checklist">
+                <h4>Phase 2 - Gestion des Patients</h4>
+                <ul>
+                    <li>Formulaire de création patient</li>
+                    <li>Fiche patient complète</li>
+                    <li>Recherche et filtres</li>
+                    <li>Historique vaccinal</li>
+                    <li>Photos et documents</li>
+                </ul>
+            </div>
+
+            <div class="checklist">
+                <h4>Phase 3 - Vaccinations</h4>
+                <ul>
+                    <li>Formulaire de vaccination (3 clics)</li>
+                    <li>Calendrier vaccinal marocain</li>
+                    <li>Gestion des lots</li>
+                    <li>Réactions post-vaccinales</li>
+                    <li>Notifications automatiques</li>
+                </ul>
+            </div>
+
+            <div class="checklist">
+                <h4>Phase 4 - Administration</h4>
+                <ul>
+                    <li>Rapports et statistiques</li>
+                    <li>Gestion des stocks</li>
+                    <li>Tableau de bord admin</li>
+                    <li>Export des données</li>
+                    <li>Gestion des utilisateurs</li>
+                </ul>
+            </div>
+
+            <div class="checklist">
+                <h4>Phase 5 - Optimisations</h4>
+                <ul>
+                    <li>Mode hors-ligne</li>
+                    <li>PWA (Progressive Web App)</li>
+                    <li>Performance mobile</li>
+                    <li>Tests utilisateurs</li>
+                    <li>Documentation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 12: Plan de Déploiement -->
+        <div class="section">
+            <h2>🚀 Plan de Déploiement</h2>
+            
+            <h3>Tests Pilotes</h3>
+            <div class="highlight-box">
+                <h4>Hôpitaux Pilotes Sélectionnés</h4>
+                <ul>
+                    <li><strong>🏙️ Hôpital Ibn Sina (Casablanca) :</strong> Urbain</li>
+                    <li><strong>🏘️ Centre de Santé Sidi Moumen (Casablanca) :</strong> Périurbain</li>
+                    <li><strong>🌾 Centre de Santé El Jadida :</strong> Rural</li>
+                </ul>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Infirmiers formés</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Administrateurs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Responsables techniques</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Semaines de test</div>
+                </div>
+            </div>
+
+            <h3>Déploiement National</h3>
+            <div class="highlight-box">
+                <h4>Phases de Déploiement</h4>
+                <ul>
+                    <li><strong>Phase 1 :</strong> Grandes villes (Casablanca, Rabat, Fès)</li>
+                    <li><strong>Phase 2 :</strong> Villes moyennes (Agadir, Marrakech, Tanger)</li>
+                    <li><strong>Phase 3 :</strong> Petites villes et zones périurbaines</li>
+                    <li><strong>Phase 4 :</strong> Zones rurales et centres de santé</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
